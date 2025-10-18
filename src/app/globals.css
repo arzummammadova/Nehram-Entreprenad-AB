@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.button-contact{
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+
+    border: solid var(--corvid-border-color, rgba(var(--brd, var(--color_15, color_15)), var(--alpha-brd, 1))) var(--corvid-border-width, var(--brw, 0));
+    cursor: pointer !important;
+}
+
+button,img{
+  cursor: pointer;
+}
+
+.list{
+  padding-left: 50px;
+}
