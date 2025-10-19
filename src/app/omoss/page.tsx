@@ -42,7 +42,7 @@ const Page = () => {
     };
 
     return (
-        <div className=" w-[60%] mx-auto mt-10 font-sans relative">
+        <div className="w-[90%] md:w-[60%] mx-auto mt-10 font-sans relative">
             {/* Carousel Container */}
             <Title />
             <div className="relative overflow-hidden group">
@@ -51,7 +51,7 @@ const Page = () => {
                         key={slides[current].id}
                         src={slides[current].image}
                         alt={slides[current].label}
-                        className="w-full h-[600px] object-cover cursor-pointer"
+                        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover cursor-pointer"
                         onClick={() => setOpen(true)}
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -73,15 +73,15 @@ const Page = () => {
                 {/* Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-[#00000080] hover:bg-[#000000a1] p-2 rounded-full text-white"
+                    className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-[#00000080] hover:bg-[#000000a1] p-1 sm:p-2 rounded-full text-white"
                 >
-                    <ChevronLeft size={24} />
+                    <ChevronLeft size={20}/>
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#00000080] hover:bg-[#000000a1] p-2 rounded-full text-white"
+                    className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-[#00000080] hover:bg-[#000000a1] p-1 sm:p-2 rounded-full text-white"
                 >
-                    <ChevronRight size={24} />
+                    <ChevronRight size={20}  />
                 </button>
             </div>
 
@@ -93,16 +93,16 @@ const Page = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setOpen(false)} // istənilən yerə kliklə bağlansın
+                        onClick={() => setOpen(false)}
                     >
                         <div
-                            className="relative max-w-[1000px] w-full px-6"
-                            onClick={(e) => e.stopPropagation()} // şəkil klikində bağlanmasın
+                            className="relative max-w-[1000px] w-full px-4 sm:px-6"
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <img
                                 src={slides[current].image}
                                 alt="Large view"
-                                className="w-full"
+                                className="w-full max-h-[80vh] object-contain"
                             />
 
                             {/* Close Button */}
@@ -116,15 +116,15 @@ const Page = () => {
                             {/* Navigation */}
                             <button
                                 onClick={prevSlide}
-                                className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white"
+                                className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white"
                             >
-                                <ChevronLeft size={28} />
+                                <ChevronLeft size={24}  />
                             </button>
                             <button
                                 onClick={nextSlide}
-                                className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white"
+                                className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white"
                             >
-                                <ChevronRight size={28} />
+                                <ChevronRight size={24}  />
                             </button>
 
                             {/* Counter */}
@@ -137,11 +137,11 @@ const Page = () => {
             </AnimatePresence>
 
             {/* About Section */}
-            <div className="mt-10 flex justify-between items-start  gap-6 px-4 py-8">
-                <h2 className="text-[#555555] text-[24px] text-xl font-bold tracking-wide mb-3 w-1/3 text-start">
+            <div className="mt-10 flex flex-col md:flex-row justify-between items-start gap-6 px-4 py-8">
+                <h2 className="text-[#555555] text-[24px] font-bold tracking-wide mb-3 w-full md:w-1/3 text-start">
                     OM OSS
                 </h2>
-                <p className="text-[#555] text-[18px] leading-relaxed w-2/3 text-start">
+                <p className="text-[#555] text-[18px] leading-relaxed w-full md:w-2/3 text-start">
                     R&R Service är bildad år 2012 och vi utför arbete i Stockholm. Vår företag har utfört mer än hundra projekt.
 
                     Vi på R&R Service vill sätta kundens vision i fokus. Vi jobbar alltid för att överträffa kundens förväntningar och tummar aldrig på kvalitet. För oss är det viktigt att kunden ska känna sig trygg genom hela processen och få sin vision förverkligad. Vi vet vad som krävs och det ställer väldigt höga krav på oss själva. Vi nöjer oss aldrig med mindre än vi själva förväntar oss, och arbetar alltid efter att utvecklas. Utöver våra höga krav på oss själva, följer vi självklart rådande byggnormer. Några av våra jobb kan ni se här och vi lämnar även med stolthet ut referenser.

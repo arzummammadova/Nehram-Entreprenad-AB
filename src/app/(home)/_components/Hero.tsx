@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="text-center">
       <Title />
 
-      <div className="relative w-full h-[800px]">
+      <div className="relative w-full h-[800px] md:h-[600px] sm:h-[400px] ">
         <Image
           src="https://static.wixstatic.com/media/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg/v1/fill/w_1000,h_581,al_c,q_85,enc_avif,quality_auto/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg"
           alt="Construction hero image"

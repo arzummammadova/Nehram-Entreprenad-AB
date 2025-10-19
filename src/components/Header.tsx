@@ -30,7 +30,7 @@ const Header = ({ transparent = false }: Props) => {
 
     return (
         // added subtle translucent bg + backdrop blur when transparent is true
-        <header className={`w-full ${transparent ? 'bg-black/20 backdrop-blur-sm border-b border-white/5' : 'bg-[#F6F6F6]'} relative z-100 `}>
+        <header className={`w-full ${transparent ? 'bg-black/20 backdrop-blur-sm border-b border-white/5' : 'bg-[#F6F6F6]'}  z-100 `}>
             <nav className="mx-auto px-3 py-2 w-[80%] flex justify-between items-center">
 
                 {/* Logo */}
