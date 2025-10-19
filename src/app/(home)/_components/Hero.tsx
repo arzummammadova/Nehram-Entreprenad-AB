@@ -28,7 +28,7 @@ const Hero = () => {
 
 
 
-      <div className="w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
+     <div className="w-full lg:w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
         <h3 className='text-[#555555] text-[28px] font-bold'>Vi levererar kvalitet hela vägen</h3>
         <p className='text-[#5A5555] text-[22px]'>
           Vi är en bygg- och renoveringsfirma som alltid levererar kvalitet hela vägen.
@@ -44,7 +44,7 @@ const Hero = () => {
 
       <GalleryPreview />
 
-      <div className="w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
+      <div className="w-full lg:w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
         <h3 className='text-[#555555] text-[28px] font-bold'>ROT/RUT-AVDRAG</h3>
         <p className='text-[#5A5555] text-[22px]'>
           Vi har F-skattsedel och är ansvarsförsäkrade. ROT-avdraget på 50 procent och RUT-avdraget på 50 procent  gäller på alla våra hushållsnära tjänster – vi drar av direkt på fakturan.
@@ -64,7 +64,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
+      <div className="lg:w-[60%] w-full mx-auto py-[100px] flex flex-col gap-8 items-center">
         <h3 className='text-[#555555] text-[28px] font-bold'>Vi är lyhörda för kundens önskemål</h3>
         <p className='text-[#5A5555] text-[22px]'>Vi lyssnar alltid på kundens önskemål och viker inte för några utmaningar. Låt fantasin flöda, våra erfarna och välutbildade medarbetare kommer att göra sitt bästa för att bygga och renovera ditt drömhus eller drömlägenhet.
         </p>
