@@ -8,14 +8,21 @@ const Hero = () => {
     <div className="text-center">
       <Title />
 
-      <div className="relative w-full h-[800px] md:h-[600px] sm:h-[400px] ">
-        <Image
-          src="https://static.wixstatic.com/media/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg/v1/fill/w_1000,h_581,al_c,q_85,enc_avif,quality_auto/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg"
-          alt="Construction hero image"
-          fill
-          className="object-cover"
-        />
-      </div>
+      <div className="relative w-full 
+    h-[800px]        /* large desktops */
+    lg:h-[700px] 
+    md:h-[600px]     
+    sm:h-[300px]     /* tablets & small phones */
+    h-[300px]        /* extra small (default) */
+">
+  <Image
+    src="https://static.wixstatic.com/media/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg"
+    alt="Construction hero image"
+    fill
+    className="object-cover"
+  />
+</div>
+
 
       <div className="w-[60%] mx-auto py-[100px] flex flex-col gap-8 items-center">
         <h3 className='text-[#555555] text-[28px] font-bold'>Vi levererar kvalitet hela vägen</h3>
