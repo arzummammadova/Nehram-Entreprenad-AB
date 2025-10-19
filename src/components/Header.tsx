@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { createPortal } from 'react-dom' // <-- əlavə edildi
 
 type Props = {
     transparent?: boolean
@@ -72,53 +73,56 @@ const Header = ({ transparent = false }: Props) => {
                 </button>
             </nav>
 
-            {/* Fullscreen Mobile Menu */}
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="fixed inset-0 bg-black flex flex-col justify-center items-center z-[100]"
-                    >
-                        {/* Close Button */}
-                        <button
-                            className="absolute top-6 right-6 text-4xl font-bold text-white hover:rotate-90 transition-transform duration-300"
-                            onClick={() => setOpen(false)}
+            {/* Fullscreen Mobile Menu rendered into document.body via portal so it covers whole viewport */}
+            {typeof document !== 'undefined' && createPortal(
+                <AnimatePresence>
+                    {open && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 bg-black/95 flex flex-col justify-center items-center z-[9999]"
                         >
-                            ✕
-                        </button>
+                            {/* Close Button */}
+                            <button
+                                className="absolute top-6 right-6 text-4xl font-bold text-white hover:rotate-90 transition-transform duration-300"
+                                onClick={() => setOpen(false)}
+                            >
+                                ✕
+                            </button>
 
-                        {/* Links */}
-                        <ul className="flex flex-col items-center gap-6 text-[22px] font-semibold text-white">
-                            {links.map(link => (
-                                <motion.li
-                                    key={link.href}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.1 }}
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setOpen(false)}
-                                        className={`
-                                            px-8 py-3 rounded-full text-lg tracking-wide 
-                                            transition-all duration-300 
-                                            ${pathname === link.href
-                                                ? 'bg-white text-black shadow-lg scale-105'
-                                                : 'text-white hover:bg-white hover:text-black'
-                                            }
-                                        `}
+                            {/* Links */}
+                            <ul className="flex flex-col items-center gap-6 text-[22px] font-semibold text-white">
+                                {links.map(link => (
+                                    <motion.li
+                                        key={link.href}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.1 }}
                                     >
-                                        {link.label}
-                                    </Link>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                        <Link
+                                            href={link.href}
+                                            onClick={() => setOpen(false)}
+                                            className={`
+                                                px-8 py-3 rounded-full text-lg tracking-wide 
+                                                transition-all duration-300 
+                                                ${pathname === link.href
+                                                    ? 'bg-white text-black shadow-lg scale-105'
+                                                    : 'text-white hover:bg-white hover:text-black'
+                                                }
+                                            `}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </header>
     )
 }
