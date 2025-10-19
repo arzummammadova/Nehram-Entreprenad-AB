@@ -10,9 +10,13 @@ const GalleryPreview = () => {
   ];
 
   return (
-    <div className="flex h-[325px]">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  h-auto">
       {images.map((src, idx) => (
-        <Link href="/galleri" key={idx} className="relative w-full group overflow-hidden">
+        <Link
+          href="/galleri"
+          key={idx}
+          className="relative w-full aspect-[4/3] group overflow-hidden"
+        >
           <Image
             src={src}
             alt={`Gallery image ${idx + 1}`}
@@ -20,7 +24,7 @@ const GalleryPreview = () => {
             className="object-cover transition-transform duration-300 group-hover:scale-110"
           />
           {/* Hover overlay */}
-          <div className="absolute inset-0 bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
       ))}
     </div>
