@@ -1,5 +1,6 @@
 'use client';
 
+import Title from '@/components/Title';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
@@ -53,7 +54,9 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-10">
+   <div className="">
+    <Title/>
+     <div className="w-full max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-10">
       {/* Left Image */}
       <div className="md:w-1/2">
         <img
@@ -72,7 +75,7 @@ const ContactPage: React.FC = () => {
           <p>
             Email:{' '}
             <a href="mailto:info@r-rservice.com" className="text-teal-600">
-              info@r-rservice.com
+            Info@nehrem.se
             </a>
           </p>
           <p>
@@ -137,6 +140,7 @@ const ContactPage: React.FC = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 
