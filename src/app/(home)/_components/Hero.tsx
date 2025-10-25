@@ -50,7 +50,7 @@ const Hero = () => {
           Vi levererar kvalitet hela vägen
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
-          Vi är en bygg- och renoveringsfirma som alltid levererar kvalitet hela vägen.
+          Vi är en bygg- och renoveringsfirma som alltid levererar kvalitet hela vägen. Vi utför arbeten år alla – privatpersoner, företag och förvaltningsbolag och vi gör alltid jobbet till ett på förhand överenskommet pris med fulla garantier.
         </p>
 
         <Link href="/kontakt">
@@ -78,7 +78,7 @@ const Hero = () => {
           ROT/RUT-AVDRAG
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
-          Vi har F-skattsedel och är ansvarsförsäkrade...
+        Vi har F-skattsedel och är ansvarsförsäkrade. ROT-avdraget på 30 procent och RUT-avdraget på 50 procent  gäller på alla våra hushållsnära tjänster – vi drar av direkt på fakturan.
         </p>
 
         <Link href="/kontakt">
@@ -120,7 +120,7 @@ const Hero = () => {
           Vi är lyhörda...
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
-          Vi lyssnar alltid på kundens önskemål...
+         Vi lyssnar alltid på kundens önskemål och viker inte för några utmaningar. Låt fantasin flöda, våra erfarna och välutbildade medarbetare kommer att göra sitt bästa för att bygga och renovera ditt drömhus eller drömlägenhet.
         </p>
 
         <Link href="/kontakt">
