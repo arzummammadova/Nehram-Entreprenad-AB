@@ -17,7 +17,7 @@ const page = () => {
             <Title />
 
                  <div className="mx-auto w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] text-[#88906A]">
-                <h4 className="text-[30px] sm:text-[40px] md:text-[50px] font-semibold">
+                <h4 className="text-[30px] sm:text-[40px] md:text-[50px] font-semibolde2w`">
                     Våra Tjänster
                 </h4>
                 <ul className="list-disc mt-2 text-[18px] sm:text-[22px] md:text-[30px] pl-5">

@@ -142,11 +142,11 @@ const Page = () => {
                     OM OSS
                 </h2>
                 <p className="text-[#555] text-[18px] leading-relaxed w-full md:w-2/3 text-start">
-                    R&R Service är bildad år 2012 och vi utför arbete i Stockholm. Vår företag har utfört mer än hundra projekt.
+                   Nehram  är bildad år 2025 och vi utför arbete i Stockholm. Vår företag har utfört mer än hundra projekt.
 
-                    Vi på R&R Service vill sätta kundens vision i fokus. Vi jobbar alltid för att överträffa kundens förväntningar och tummar aldrig på kvalitet. För oss är det viktigt att kunden ska känna sig trygg genom hela processen och få sin vision förverkligad. Vi vet vad som krävs och det ställer väldigt höga krav på oss själva. Vi nöjer oss aldrig med mindre än vi själva förväntar oss, och arbetar alltid efter att utvecklas. Utöver våra höga krav på oss själva, följer vi självklart rådande byggnormer. Några av våra jobb kan ni se här och vi lämnar även med stolthet ut referenser.
+                    Vi på Nehram Entreprenad vill sätta kundens vision i fokus. Vi jobbar alltid för att överträffa kundens förväntningar och tummar aldrig på kvalitet. För oss är det viktigt att kunden ska känna sig trygg genom hela processen och få sin vision förverkligad. Vi vet vad som krävs och det ställer väldigt höga krav på oss själva. Vi nöjer oss aldrig med mindre än vi själva förväntar oss, och arbetar alltid efter att utvecklas. Utöver våra höga krav på oss själva, följer vi självklart rådande byggnormer. Några av våra jobb kan ni se här och vi lämnar även med stolthet ut referenser.
 
-                    Vi på R&R Service trivs med att lösa problem. Allting går inte alltid som man tänkt sig, då gäller det att vara alert och stå på tå. Kunna anpassa sig och utforma lösningar efter de olika situationer som presenterar sig. Vi skulle vilja slå oss på bröstet och säga att vi är riktigt bra på just detta.
+                    Vi på Nehram Entreprenad trivs med att lösa problem. Allting går inte alltid som man tänkt sig, då gäller det att vara alert och stå på tå. Kunna anpassa sig och utforma lösningar efter de olika situationer som presenterar sig. Vi skulle vilja slå oss på bröstet och säga att vi är riktigt bra på just detta.
                     Vi brukar säga att vanligt sunt förnuft ger ovanligt bra lösningar och snygga resultat.
                 </p>
             </div>
