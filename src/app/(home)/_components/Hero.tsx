@@ -46,7 +46,7 @@ const Hero = () => {
         viewport={{ once: true }}
         variants={fadeUp}
       >
-        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[28px] font-bold">
+        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[24px] font-bold">
           Vi levererar kvalitet hela vägen
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
@@ -74,7 +74,7 @@ const Hero = () => {
         viewport={{ once: true }}
         variants={fadeUp}
       >
-        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[28px] font-bold">
+        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[24px] font-bold">
           ROT/RUT-AVDRAG
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
@@ -116,7 +116,7 @@ const Hero = () => {
         viewport={{ once: true }}
         variants={fadeUp}
       >
-        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[28px] font-bold">
+        <h3 className="text-[#555555] text-[20px] sm:text-[24px] md:text-[24px] font-bold">
           Vi är lyhörda...
         </h3>
         <p className="text-[#5A5555] text-[16px] sm:text-[18px] md:text-[22px] leading-relaxed">
