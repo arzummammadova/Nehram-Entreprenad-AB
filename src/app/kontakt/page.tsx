@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Mail, Phone, MapPin, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface FormData {
@@ -59,7 +59,7 @@ const InputField = ({
   </div>
 );
 
-const ContactPage: React.FC = () => {
+export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -69,9 +69,7 @@ const ContactPage: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<Errors>({});
-  const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const validationRules = {
     name: {
@@ -87,7 +85,7 @@ const ContactPage: React.FC = () => {
         if (!val.trim()) return true;
         return /^[+]?[\d\s-()]{7,20}$/.test(val.replace(/\s/g, ''));
       },
-      message: 'Telefonnumret måste bestå av 7–20 siffror.',
+      message: 'Telefonnumret måste vara mellan 7 och 20 siffror.',
     },
     subject: {
       test: (val: string) => val.trim().length >= 3,
@@ -95,7 +93,7 @@ const ContactPage: React.FC = () => {
     },
     message: {
       test: (val: string) => val.trim().length >= 10,
-      message: 'Meddelandet måste innehålla minst 10 tecken.',
+      message: 'Meddelandet måste vara minst 10 tecken.',
     },
   };
 
@@ -124,40 +122,43 @@ const ContactPage: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSuccessMessage('');
-    setErrorMessage('');
-
+  const handleSubmit = () => {
     if (!validate()) return;
 
-    setLoading(true);
-    try {
-      const res = await fetch(`https://nehrem-entreprenad-ab-backend.onrender.com/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  const emailTo = 'nehrem.info@gmail.com';
+    
+    const messageBody = `Namn: ${formData.name}
+  E-post: ${formData.email}
+  Telefon: ${formData.tel || 'Ej angiven'}
 
-      if (res.ok) {
-        setSuccessMessage('✅ Ditt meddelande har skickats framgångsrikt!!');
-        setFormData({ name: '', email: '', tel: '', subject: '', message: '' });
-        setErrors({});
-      } else {
-        const data = await res.json();
-        setErrorMessage(data.error || 'Ett fel uppstod. Försök igen senare.');
-      }
-    } catch (error) {
-      setErrorMessage('Det gick inte att ansluta till servern.');
-    } finally {
-      setLoading(false);
-    }
+  Meddelande:
+  ${formData.message}`;
+
+    // Gmail və digər email servislərində işləyən URL sxemi
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(messageBody)}`;
+    
+    // Fallback: Mailto linki (Gmail açılmazsa)
+    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(messageBody)}`;
+
+    // Gmail link-i cəhd et
+    window.open(gmailLink, '_blank');
+    
+    // 1 saniyə sonra mailto-ya keç əgər Gmail açılmazsa
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+    }, 1000);
+
+  setSuccessMessage('✅ E-post öppnas. Ditt meddelande kommer att visas ifyllt.');
+    setTimeout(() => {
+      setFormData({ name: '', email: '', tel: '', subject: '', message: '' });
+      setErrors({});
+      setSuccessMessage('');
+    }, 3000);
   };
 
   return (
     <div>
       <div className="w-full max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row gap-10">
-        {/* Vänster bild */}
         <div className="md:w-1/2 flex-shrink-0">
           <img
             src="https://static.wixstatic.com/media/9c608a_4a326440e02247b2892f7ee5794fffe3.jpg/v1/fill/w_876,h_615,al_c,q_85,enc_avif,quality_auto/9c608a_4a326440e02247b2892f7ee5794fffe3.jpg"
@@ -166,10 +167,9 @@ const ContactPage: React.FC = () => {
           />
         </div>
 
-        {/* Höger kontaktinfo och formulär */}
         <div className="md:w-1/2 flex flex-col gap-8">
           <div className="bg-gradient-to-br from-teal-50 to-blue-50 p-6 rounded-lg shadow">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Kontaktinformation</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-4">Kontaktuppgifter</h2>
             <div className="space-y-3 text-gray-700">
               <div className="flex items-center gap-3">
                 <MapPin size={20} className="text-teal-600" />
@@ -181,10 +181,10 @@ const ContactPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <Mail size={20} className="text-teal-600" />
                 <a
-                  href="mailto:Info@nehrem.se"
+                  href="mailto:nehrem.info@gmail.com"
                   className="text-teal-600 hover:text-teal-700 font-medium"
                 >
-                  Info@nehrem.se
+                  nehrem.info@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -205,14 +205,8 @@ const ContactPage: React.FC = () => {
               {successMessage}
             </div>
           )}
-          {errorMessage && (
-            <div className="flex items-center gap-2 p-4 bg-red-100 border border-red-400 text-red-800 rounded">
-              <AlertCircle size={20} />
-              {errorMessage}
-            </div>
-          )}
 
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-4">
             <InputField
               label="Namn"
               name="name"
@@ -225,7 +219,7 @@ const ContactPage: React.FC = () => {
               label="E-post"
               name="email"
               type="email"
-              placeholder="Email@example.com"
+              placeholder="e-post@example.com"
               value={formData.email}
               error={errors.email}
               onChange={handleChange}
@@ -242,7 +236,7 @@ const ContactPage: React.FC = () => {
             <InputField
               label="Ämne"
               name="subject"
-              placeholder="Skriv ämnet här"
+              placeholder="Skriv ämne"
               value={formData.subject}
               error={errors.subject}
               onChange={handleChange}
@@ -252,7 +246,7 @@ const ContactPage: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">Meddelande</label>
               <textarea
                 name="message"
-                placeholder="Skriv ditt meddelande här..."
+                placeholder="Skriv ditt meddelande..."
                 value={formData.message}
                 onChange={handleChange}
                 className={`w-full px-4 py-2 rounded border-2 resize-none transition-colors ${
@@ -271,21 +265,14 @@ const ContactPage: React.FC = () => {
             </div>
 
             <button
-              type="submit"
-              disabled={loading}
-              className={`w-full py-3 px-4 rounded font-medium transition-all ${
-                loading
-                  ? 'bg-gray-400 cursor-not-allowed opacity-60'
-                  : 'bg-teal-600 text-white hover:bg-teal-700 active:scale-95'
-              }`}
+              onClick={handleSubmit}
+              className="w-full py-3 px-4 rounded font-medium transition-all bg-teal-600 text-white hover:bg-teal-700 active:scale-95"
             >
-              {loading ? '⏳ Skickar...' : ' Skicka meddelande'}
+              Skicka meddelande
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default ContactPage;
+}
