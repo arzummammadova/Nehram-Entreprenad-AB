@@ -9,22 +9,22 @@ const slides = [
         id: 1,
         image:
             "https://static.wixstatic.com/media/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg/v1/fill/w_1000,h_537,al_c,q_85,enc_avif,quality_auto/9c608a_30e7a1feae5c4d8a96f3cd1261fd4658.jpg",
-        label: "NEHRAM ENTREPRENAD AB",
-        hoverText: "NEHRAM ENTREPRENAD AB",
+        label: "NEHRÄM ENTREPRENAD AB",
+        hoverText: "NEHRÄM ENTREPRENAD AB",
     },
     {
         id: 2,
         image:
             "https://static.wixstatic.com/media/9c608a_27921a7a17bf4f9090f57eda4d7e336e.jpg/v1/fill/w_1000,h_537,al_c,q_85,enc_avif,quality_auto/9c608a_27921a7a17bf4f9090f57eda4d7e336e.jpg",
         label: "NEHREM ENTREPRENAD AB",
-        hoverText: "NEHRAM ENTREPRENAD AB",
+        hoverText: "NEHRÄM ENTREPRENAD AB",
     },
     {
         id: 3,
         image:
             "https://static.wixstatic.com/media/9c608a_44cbfc1aa16143a9b1dd348258c904ef.jpg/v1/fill/w_1000,h_537,al_c,q_85,enc_avif,quality_auto/9c608a_44cbfc1aa16143a9b1dd348258c904ef.jpg",
         label: "NEHREM ENTREPRENAD AB",
-        hoverText: "NEHRAM ENTREPRENAD AB",
+        hoverText: "NEHRÄM ENTREPRENAD AB",
     },
 ];
 
@@ -142,11 +142,11 @@ const Page = () => {
                     OM OSS
                 </h2>
                 <p className="text-[#555] text-[18px] leading-relaxed w-full md:w-2/3 text-start">
-                   Nehram  är bildad år 2025 och vi utför arbete i Stockholm. Vår företag har utfört mer än hundra projekt.
+                   Nehräm  är bildad år 2025 och vi utför arbete i Stockholm. Vår företag har utfört mer än hundra projekt.
 
-                    Vi på Nehram Entreprenad vill sätta kundens vision i fokus. Vi jobbar alltid för att överträffa kundens förväntningar och tummar aldrig på kvalitet. För oss är det viktigt att kunden ska känna sig trygg genom hela processen och få sin vision förverkligad. Vi vet vad som krävs och det ställer väldigt höga krav på oss själva. Vi nöjer oss aldrig med mindre än vi själva förväntar oss, och arbetar alltid efter att utvecklas. Utöver våra höga krav på oss själva, följer vi självklart rådande byggnormer. Några av våra jobb kan ni se här och vi lämnar även med stolthet ut referenser.
+                    Vi på Nehräm Entreprenad vill sätta kundens vision i fokus. Vi jobbar alltid för att överträffa kundens förväntningar och tummar aldrig på kvalitet. För oss är det viktigt att kunden ska känna sig trygg genom hela processen och få sin vision förverkligad. Vi vet vad som krävs och det ställer väldigt höga krav på oss själva. Vi nöjer oss aldrig med mindre än vi själva förväntar oss, och arbetar alltid efter att utvecklas. Utöver våra höga krav på oss själva, följer vi självklart rådande byggnormer. Några av våra jobb kan ni se här och vi lämnar även med stolthet ut referenser.
 
-                    Vi på Nehram Entreprenad trivs med att lösa problem. Allting går inte alltid som man tänkt sig, då gäller det att vara alert och stå på tå. Kunna anpassa sig och utforma lösningar efter de olika situationer som presenterar sig. Vi skulle vilja slå oss på bröstet och säga att vi är riktigt bra på just detta.
+                    Vi på Nehräm Entreprenad trivs med att lösa problem. Allting går inte alltid som man tänkt sig, då gäller det att vara alert och stå på tå. Kunna anpassa sig och utforma lösningar efter de olika situationer som presenterar sig. Vi skulle vilja slå oss på bröstet och säga att vi är riktigt bra på just detta.
                     Vi brukar säga att vanligt sunt förnuft ger ovanligt bra lösningar och snygga resultat.
                 </p>
             </div>

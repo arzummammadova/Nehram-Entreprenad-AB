@@ -17,23 +17,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nehram Entreprenad AB | Bygg och renovering i Sverige",
+  title: "Nehräm Entreprenad AB | Bygg och renovering i Sverige",
   description:
-    "Nehram Entreprenad AB är en professionell bygg- och renoveringsfirma i Sverige. Vi erbjuder högkvalitativa byggtjänster för både privatpersoner och företag.",
+    "Nehräm Entreprenad AB är en professionell bygg- och renoveringsfirma i Sverige. Vi erbjuder högkvalitativa byggtjänster för både privatpersoner och företag.",
   keywords: [
     "byggfirma Sverige",
     "renovering Stockholm",
     "byggtjänster",
-    "Nehram Entreprenad",
+    "Nehräm Entreprenad",
     "husrenovering",
   ],
-  authors: [{ name: "Nehram Entreprenad AB" }],
+  authors: [{ name: "Nehräm Entreprenad AB" }],
   openGraph: {
-    title: "Nehram Entreprenad AB | Bygg och renovering i Sverige",
+    title: "Nehräm Entreprenad AB | Bygg och renovering i Sverige",
     description:
       "Professionell bygg- och renoveringsfirma i Sverige. Kontakta oss för byggtjänster av hög kvalitet.",
     url: "https://www.nehramentreprenad.se",
-    siteName: "Nehram Entreprenad AB",
+    siteName: "Nehräm Entreprenad AB",
     locale: "sv_SE",
     type: "website",
   },
